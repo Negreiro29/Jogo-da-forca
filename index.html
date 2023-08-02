@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Vinicius-Negreiro">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Jogo da Forca</title>
+</head>
+<body>
+    <div class="container">
+        <div class="cabecalho">
+            <h1>JOGO DA FORCA</h1>
+            <div id="jogador">
+                <label for="nome">Digite seu Nome</label>
+                <input type="text" id="nome">
+                <input type="submit" id="submitNome" value="Entar">
+            </div>
+        </div>
+        <section>
+            <div class="identidade">
+                <h2>Jogador:</h2>
+                <h2 id="nomeJogador"></h2>
+            </div>
+            <button type="submit" onclick=iniciar()>Nova Palavra</button>
+            <div class="display">
+                <div class="dicas">
+                    <h3>Dica: </h3>
+                    <p id="dicaPlavra"></p>
+                </div>
+                <div class="palavra">
+                    <input type="text" id="letra-1" class="letraPalavra" disabled>
+                    <input type="text" id="letra-2" class="letraPalavra" disabled>
+                    <input type="text" id="letra-3" class="letraPalavra" disabled>
+                    <input type="text" id="letra-4" class="letraPalavra" disabled>
+                    <input type="text" id="letra-5" class="letraPalavra" disabled>
+                    <input type="text" id="letra-6" class="letraPalavra" disabled>
+                    <input type="text" id="letra-7" class="letraPalavra" disabled>
+                    <input type="text" id="letra-8" class="letraPalavra" disabled>
+                    <input type="text" id="letra-9" class="letraPalavra" disabled>
+                    <input type="text" id="letra-10" class="letraPalavra" disabled>
+                </div>
+                <div class="jogo">
+                    <label for="">Digite uma letra</label>
+                    <input type="text" id="letraJogada" maxlength="1">
+                    <input type="submit" id="submitLetra" value="Jogar" onclick=jogar()> 
+                    <label for="letrasTentadas">Letras Jogadas: </label>
+                    <h3 id="letasTentadas"></h3>
+                </div>
+                <div class="boneco">
+                    <svg height="250" width="200" class="forca">
+                        <!-- forca -->
+                        <line x1="60" y1="20" x2="140" y2="20" />
+                        <line x1="140" y1="20" x2="140" y2="50" />
+                        <line x1="60" y1="20" x2="60" y2="230" />
+                        <line x1="20" y1="230" x2="100" y2="230" />
+                        
+                        <!-- cabeça -->
+                        <circle cx="140" cy="70" r="20" class="forca-parte" id="head"/>
+                        <!-- corpo -->
+                        <line x1="140" y1="90" x2="140" y2="150" class="forca-parte" id="body"/>
+                        <!-- braços -->
+                        <line x1="140" y1="120" x2="120" y2="100" class="forca-parte" id="amry1"/>
+                        <line x1="140" y1="120" x2="160" y2="100" class="forca-parte" id="army2"/>
+                        <!-- pernas -->
+                        <line x1="140" y1="150" x2="120" y2="180" class="forca-parte" id="leg1"/>
+                        <line x1="140" y1="150" x2="160" y2="180" class="forca-parte" id="leg2"/>
+                    </svg>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="/javascript/script.js"></script>
+</body>
+</html>
